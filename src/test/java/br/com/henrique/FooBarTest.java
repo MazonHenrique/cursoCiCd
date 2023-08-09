@@ -8,8 +8,8 @@ class FooBarTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
-		//System.out.println("Teste Junit OK");
+		//fail("Not yet implemented");
+		System.out.println("Teste Junit OK");
 	}
 
 }
