@@ -10,11 +10,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import br.com.henrique.service.CourseService;
 
-class CourseBusinessMockTest {
+class CourseBusinessMockTestWithBDDTest {
 
     CourseService mockService;
     CourseBusiness business;
@@ -56,4 +57,29 @@ class CourseBusinessMockTest {
         // Then / Assert
         assertThat(filteredCourses.size(), is(4)); // bdd usando hamcrest
     }
+
+    @DisplayName("Delete Courses not related to spring Using Mockito sould call method deleteCourse")
+    @Test
+    void deleteCoursesNotRelatedToSpring_UsingMockitoVerify_CallMethodDeleteCourse(){
+        // Given / Arrange
+        given(mockService.retrieveCourses("Leandro"))
+        .willReturn(courses);
+
+        // When / Act
+        business.deleteNotCoursesRelatedToSpring("Leandro");
+
+        // Then / Assert
+        // verify(mockService)
+        //    .deleteCourse("Agile Desmistificado com Scrum, XP, Kanban e Trello");
+        // verify(mockService, times(1))
+        //    .deleteCourse("Agile Desmistificado com Scrum, XP, Kanban e Trello");
+        // verify(mockService, atLeast(2))
+        verify(mockService, atLeastOnce())
+            .deleteCourse("Agile Desmistificado com Scrum, XP, Kanban e Trello");
+        verify(mockService)
+            .deleteCourse("Arquitetura de Microsserviços do 0 com ASP.NET, .NET 6 e C#");
+        verify(mockService, never())
+            .deleteCourse("REST API's RESTFul do 0 à AWS com Spring Boot 3 Java e Docker");
+    }
+
 }
