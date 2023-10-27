@@ -20,12 +20,12 @@ public class ListTestWithBDD {
         
         // Given / Arrange
         List<?> list = mock(List.class);
-        given(list.size()).willReturn(10);
+        given(list.size()).willReturn(7);
         
         // When / Act & Then / Assert
-        assertThat(list.size(), is(10));
-        assertThat(list.size(), is(10));
-        assertThat(list.size(), is(10));
+        assertThat(list.size(), is(7));
+        assertThat(list.size(), is(7));
+        assertThat(list.size(), is(7));
     }
     
     @Test

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: br.com.henrique.FooBarTest
+Test set: br.com.henrique.business.ListTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 s - in br.com.henrique.FooBarTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.797 s - in br.com.henrique.business.ListTest

@@ -1,0 +1,6 @@
+br\com\henrique\business\CourseBusinessStubTest.class
+br\com\henrique\business\ListTestWithBDD.class
+br\com\henrique\business\ListTest.class
+br\com\henrique\service\stubs\CourseServiceStub.class
+br\com\henrique\business\CourseBusinessMockTest.class
+br\com\henrique\business\CourseBusinessMockTestWithBDDTest.class
